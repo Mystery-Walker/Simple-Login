@@ -6,7 +6,7 @@ from yaml.loader import SafeLoader
 with open("passwords.yaml") as file:
     config = yaml.load(file, Loader = SafeLoader)
 
-authenticator = stauth.Authenticate(config["credentials"], config['cookie']['name'], config['cookie']['key'], config['cookie']['expiry_days'], config['preauthorized'])
+authenticator = stauth.Authenticate(config["credentials"], config['cookie']['name'], config['cookie']['key'], config['cookie']['expiry_days'])
 name, authentication_status, username = authenticator.login('Login')
 if st.session_state["authentication_status"]:
     authenticator.logout('Logout', 'sidebar')
