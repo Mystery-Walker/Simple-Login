@@ -30,7 +30,7 @@ from .__about__ import (
     __uri__,
     __version__,
 )
-from . import _bcrypt  # noqa: I100
+from _bcrypt import *  # noqa: I100
 
 
 __all__ = [
